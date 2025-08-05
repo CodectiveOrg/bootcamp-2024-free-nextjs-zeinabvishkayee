@@ -3,12 +3,13 @@ import styles from "./page.module.css";
 type post={
     id:number;
     title:string
-}
+};
 
 export default async function Home() {
     const res:Response = await fetch('https://jsonplaceholder.typicode.com/posts' , {
         cache: 'no-store'
     });
+
     const posts:post[] = await res.json();
 
   return (<main>
